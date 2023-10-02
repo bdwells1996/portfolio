@@ -1,0 +1,11 @@
+@import 'src/assets/scss/settings/global.scss';
+@import 'src/assets/scss/settings/objects/objects.wrapper.scss';
+
+.c-hero{
+
+    display: flex;
+
+    &__content{
+        max-width: 530px;
+    }
+}

@@ -15,7 +15,7 @@
         &__subnav{
             display: flex;
             list-style: none;
-            margin-right: 20px;
+            margin-right: 28px;
 
             &__item{
                 &:not(:last-of-type){
@@ -39,13 +39,12 @@
         }
 
         &__item{
-            padding: 10px 20px;
             text-decoration: none;
             border-radius: 6px;
             color: $color--secondary;
 
             &:not(:last-of-type){
-                margin-right: 6px;
+                margin-right: 20px;
             }
 
             svg{
@@ -56,6 +55,7 @@
                 background-color: $color--secondary;
                 color: $color--primary;
                 font-weight: $weight--semibold;
+                padding: 10px 20px;
             }
         }
 
