@@ -1,0 +1,37 @@
+// Fonts
+
+$font--title: 'Montserrat', sans-serif;
+$font--text: 'Source Sans 3', sans-serif;
+
+// Weights
+
+$weight--regular: 400;
+$weight--medium: 500;
+$weight--semibold: 600;
+$weight--bold: 700;
+
+//Breakpoints
+
+$breakpoints: (
+  mobile: 375px,
+  tablet: 768px,
+  tablet-wide: 1024px,
+  desktop: 1280px,
+  wide: 1440px,
+  really-wide: 1920px,
+) !default;
+
+// Global variables
+
+// Colours - initial
+
+$color--primary: #95A06E;
+$color--secondary: #E8E1BF;
+$color--accent: #6C705C;
+
+$color--white: #FAFAF9;
+$color--black: #131313;
+
+// Colours - variants
+
+// Global wrapper
