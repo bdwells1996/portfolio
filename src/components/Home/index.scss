@@ -1,11 +1,48 @@
 @import 'src/assets/scss/settings/global.scss';
 @import 'src/assets/scss/settings/objects/objects.wrapper.scss';
+@import 'src/assets/scss/settings/helpers/mixins.scss';
+@import 'src/assets/scss/settings/helpers/text.scss';
 
 .c-hero{
 
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vh - 92px);
 
     &__content{
         max-width: 530px;
+
+        &__header{
+            font-size: 56px;
+            margin-bottom: 24px
+        }
+
+        &__subheader{
+            font-size: 32px;
+            font-weight: $weight--medium;
+        }
+    }
+
+    &__img{
+        @include aspect-ratio(1, 1);
+        width: 540px;
+
+        img{
+            height: 100%;
+            border-radius: 9px;
+        }
+
+        &__underlay{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            background-color: $color--primary;
+            z-index: -1;
+            border-radius: 9px;
+            box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.25);
+        }
     }
 }

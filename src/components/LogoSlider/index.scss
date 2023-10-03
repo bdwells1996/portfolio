@@ -1,0 +1,27 @@
+@import 'src/assets/scss/settings/global.scss';
+
+.c-logo-slider{
+
+    position: relative;
+    overflow: visible;
+    height: 140px;
+    background-color: $color--primary;
+    border-radius: 0 16px 16px 0;
+
+    &::before{
+        content: '';
+        height: 100%;
+        width: 200px;
+        left: -200px;
+        display: flex;
+        background-color: $color--primary;
+        position: relative;
+    }
+
+    &__inner{
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
