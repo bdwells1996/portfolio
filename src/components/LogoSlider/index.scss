@@ -11,8 +11,8 @@
     &::before{
         content: '';
         height: 100%;
-        width: 200px;
-        left: -200px;
+        width: 100vw;
+        left: -90vw;
         display: flex;
         background-color: $color--primary;
         position: relative;
@@ -23,5 +23,18 @@
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
+
+        .c-logo-slider__inner__slide{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: $color--white;
+
+            img{
+                margin-bottom: 14px;
+            }
+        }
     }
 }

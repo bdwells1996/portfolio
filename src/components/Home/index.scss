@@ -5,8 +5,10 @@
 
 .c-hero{
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    // Need media query to only apply beyond mobile screens
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 40px;
     align-items: center;
     height: calc(100vh - 92px);
 
@@ -21,12 +23,14 @@
         &__subheader{
             font-size: 32px;
             font-weight: $weight--medium;
+            margin-bottom: 54px;
         }
     }
 
     &__img{
         @include aspect-ratio(1, 1);
-        width: 540px;
+        width: 100%;
+        max-width: 540px;
 
         img{
             height: 100%;
