@@ -1,6 +1,7 @@
 {
   "name": "portfolio-site",
   "version": "0.1.0",
+  "homepage": "https://bdwells1996.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -13,7 +14,6 @@
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
     "emailjs": "^4.0.3",
-    "gh-pages": "^6.0.0",
     "gsap-trial": "^3.12.2",
     "leaflet": "^1.9.4",
     "loaders.css": "^0.1.2",
@@ -33,7 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
++   "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
