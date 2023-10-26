@@ -1,7 +1,9 @@
 @import 'src/assets/scss/settings/global.scss';
 @import 'src/assets/scss/settings/objects/objects.wrapper.scss';
+@import 'src/assets/scss/settings/objects/objects.app.scss';
 @import 'src/assets/scss/settings/helpers/mixins.scss';
 @import 'src/assets/scss/settings/helpers/text.scss';
+@import 'src/assets/scss/settings/helpers/animations.scss';
 
 .c-hero{
 
@@ -12,8 +14,29 @@
     align-items: center;
     height: calc(100vh - 92px);
 
+    &::before{
+        content: '';
+        position: absolute;
+        height: 75%;
+        width: 100%;
+        background: rgba(232, 225, 191, 0.26);
+        left: 0;
+        z-index: -1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 88%;
+        width: 100%;
+        background: rgba(232, 225, 191, 0.26);
+        left: 0;
+        z-index: -1;
+    }
+
     &__content{
         max-width: 530px;
+        animation: .6s ease-in-out 0s 1 slideInFromLeft;
 
         &__header{
             font-size: 56px;
@@ -31,6 +54,8 @@
         @include aspect-ratio(1, 1);
         width: 100%;
         max-width: 540px;
+        opacity: 0;
+        animation: .5s ease-in-out 0.5s 1 blurIntoFocus forwards;
 
         img{
             height: 100%;
@@ -48,5 +73,18 @@
             border-radius: 9px;
             box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.25);
         }
+    }
+
+    &__arrow{
+        position: absolute;
+        bottom: 0;
+        height: 30px;
+        width: 30px;
+        background-color: $color--primary;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        animation: .6s ease-in-out 0.7s 1 slideInFromBottom forwards;
+        transform: translateY(100%);
     }
 }
