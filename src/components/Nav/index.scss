@@ -23,6 +23,10 @@
         display: flex;
         align-items: center;
 
+        @media (max-width: $breakpoint-tablet) {
+            display: none;
+        }
+
         &__subnav{
             display: flex;
             list-style: none;

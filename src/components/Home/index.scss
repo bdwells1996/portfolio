@@ -13,6 +13,7 @@
     grid-column-gap: 40px;
     align-items: center;
     height: calc(100vh - 92px);
+    justify-items: center;
 
     &::before{
         content: '';
@@ -56,6 +57,10 @@
         max-width: 540px;
         opacity: 0;
         animation: .5s ease-in-out 0.5s 1 blurIntoFocus forwards;
+
+        @media(min-width: $breakpoint-mobile) and (max-width: $breakpoint-wide){
+            max-width: 420px;
+        }
 
         img{
             height: 100%;

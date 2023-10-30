@@ -1,0 +1,23 @@
+@import 'src/assets/scss/settings/global.scss';
+
+.c-about__highlights__list{
+    display: grid;
+    column-gap: 60px;
+    list-style: none;
+    padding-left: 0;
+
+    @media (min-width: $breakpoint-tablet) {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        grid-template-columns: repeat(4,minmax(0,1fr));
+    }
+
+    &__item{
+        &__title{
+            font-weight: $weight--semibold;
+            margin: 24px 0;
+        }
+    }
+}

@@ -4,6 +4,7 @@ import Logo from '../../assets/images/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faCode, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
 
 const Nav = () => (
   <div className="c-nav">
@@ -12,21 +13,23 @@ const Nav = () => (
       <img src={ Logo } alt="logo" /> 
     </Link>
 
+    <MobileMenu />
+
     <nav className="c-nav__content">
 
       <ul className="c-nav__content__subnav">
         <li className="c-nav__content__subnav__item">
-          <a target="_blank" rel="noreferrer" href="/">
+          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/ben-wells-415013189/">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </li>
         <li className="c-nav__content__subnav__item">
-          <a target="_blank" rel="noreferrer" href="/">
+          <a target="_blank" rel="noreferrer" href="https://github.com/bdwells1996">
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </li>
       </ul>
-
+      <div className="c-nav__content__highlight"></div>
       <NavLink className="c-nav__content__item" exact="true" activeClassName="active" to="/">
         <FontAwesomeIcon icon={faHome} />
         Home

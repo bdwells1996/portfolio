@@ -12,14 +12,12 @@ $weight--bold: 700;
 
 //Breakpoints
 
-$breakpoints: (
-  mobile: 375px,
-  tablet: 768px,
-  tablet-wide: 1024px,
-  desktop: 1280px,
-  wide: 1440px,
-  really-wide: 1920px,
-) !default;
+  $breakpoint-mobile: 375px;
+  $breakpoint-tablet: 768px;
+  $breakpoint-tablet-wide: 1024px;
+  $breakpoint-desktop: 1280px;
+  $breakpoint-wide: 1440px;
+  $breakpoint-really-wide: 1920px;
 
 // Global variables
 

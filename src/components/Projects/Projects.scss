@@ -1,0 +1,11 @@
+@import 'src/assets/scss/settings/global.scss';
+
+.c-projects{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__title{
+        font-weight: $weight--semibold;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}
