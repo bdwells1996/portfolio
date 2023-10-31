@@ -1,44 +1,60 @@
-@import 'src/assets/scss/settings/global.scss';
+@import "src/assets/scss/settings/global.scss";
 
-.c-logo-slider{
+.c-logo-slider {
+  position: relative;
+  overflow: visible;
+  height: 140px;
+  background-color: $color--primary;
+  border-radius: 0 16px 16px 0;
 
-    position: relative;
-    overflow: visible;
-    height: 140px;
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100vw;
+    left: -90vw;
+    display: flex;
     background-color: $color--primary;
-    border-radius: 0 16px 16px 0;
+    position: absolute;
+  }
 
-    &::before{
-        content: '';
-        height: 100%;
-        width: 100vw;
-        left: -90vw;
-        display: flex;
-        background-color: $color--primary;
-        position: absolute;
+  &__inner {
+    position: absolute !important;
+    top: 22%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .c-logo-slider__inner__slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $color--white;
+
+      img {
+        margin-bottom: 14px;
+      }
+    }
+  }
+
+  swiper-container {
+    height: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-left: -20px;
     }
 
-    &__inner{
-        position: absolute !important;
-        top: 22%;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    swiper-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $color--white;
+      font-weight: $weight--regular;
 
-        &:host{
-            top: 20%;
-        }
-
-        .c-logo-slider__inner__slide{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: $color--white;
-
-            img{
-                margin-bottom: 14px;
-            }
-        }
+      img {
+        margin-bottom: 14px;
+      }
     }
+  }
 }

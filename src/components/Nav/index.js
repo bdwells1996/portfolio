@@ -1,36 +1,53 @@
-import { Link, NavLink } from 'react-router-dom'
-import './index.scss';
-import Logo from '../../assets/images/logo.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faCode, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCode,
+  faCommentAlt,
+  faHome,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import Logo from "../../assets/images/logo.svg";
+import { MobileMenu } from "../MobileMenu/MobileMenu";
+import "./index.scss";
 
 const Nav = () => (
   <div className="c-nav">
-
     <Link className="c-nav__logo" to="/">
-      <img src={ Logo } alt="logo" /> 
+      <img src={Logo} alt="logo" />
     </Link>
 
     <MobileMenu />
 
     <nav className="c-nav__content">
-
       <ul className="c-nav__content__subnav">
         <li className="c-nav__content__subnav__item">
-          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/ben-wells-415013189/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/ben-wells-415013189/"
+          >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </li>
         <li className="c-nav__content__subnav__item">
-          <a target="_blank" rel="noreferrer" href="https://github.com/bdwells1996">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/bdwells1996"
+          >
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </li>
       </ul>
       <div className="c-nav__content__highlight"></div>
-      <NavLink className="c-nav__content__item" exact="true" activeClassName="active" to="/">
+      <NavLink
+        className="c-nav__content__item"
+        exact="true"
+        activeClassName="active"
+        to="/"
+      >
         <FontAwesomeIcon icon={faHome} />
         Home
       </NavLink>
@@ -47,8 +64,7 @@ const Nav = () => (
         Contact
       </NavLink>
     </nav>
-
   </div>
-)
+);
 
-export default Nav
+export default React.memo(Nav);

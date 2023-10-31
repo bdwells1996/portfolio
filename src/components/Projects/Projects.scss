@@ -1,11 +1,16 @@
-@import 'src/assets/scss/settings/global.scss';
+@import "src/assets/scss/settings/global.scss";
+@import "src/assets/scss/settings/helpers/animations.scss";
 
-.c-projects{
-    padding-top: 60px;
-    padding-bottom: 60px;
-    &__title{
-        font-weight: $weight--semibold;
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
+.c-projects {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: calc(100vh - 92px);
+  &__title {
+    font-weight: $weight--semibold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    opacity: 0;
+    filter: blur(5px);
+    animation: 0.4s ease-in-out 0.3s 1 blurIntoFocus forwards;
+  }
 }

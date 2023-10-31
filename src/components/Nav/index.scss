@@ -1,78 +1,77 @@
-@import 'src/assets/scss/settings/global.scss';
-@import 'src/assets/scss/settings/helpers/animations.scss';
+@import "src/assets/scss/settings/global.scss";
+@import "src/assets/scss/settings/helpers/animations.scss";
 
-.c-nav{
+.c-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  border-radius: 0 0 9px 9px;
+  background-color: $color--primary;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+
+  &__logo {
     display: flex;
-    justify-content: space-between;
+
+    img {
+      width: 164px;
+    }
+  }
+
+  &__content {
+    display: flex;
     align-items: center;
-    padding: 18px 40px;
-    border-radius: 0 0 9px 9px;
-    background-color: $color--primary;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
 
-    &__logo{
-        display: flex;
-        
-        img{
-            width: 164px;
-        }
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
     }
 
-    &__content{
+    &__subnav {
+      display: flex;
+      list-style: none;
+      margin-right: 28px;
 
-        display: flex;
-        align-items: center;
-
-        @media (max-width: $breakpoint-tablet) {
-            display: none;
+      &__item {
+        &:not(:last-of-type) {
+          margin-right: 14px;
         }
 
-        &__subnav{
-            display: flex;
-            list-style: none;
-            margin-right: 28px;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-            &__item{
-                &:not(:last-of-type){
-                    margin-right: 14px;
-                }
-
-                a{
-
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-
-                  svg{
-                    color: $color--secondary;
-                    height: 24px;
-                    width: 24px;
-                  }
-                }
-
-            }
+          svg {
+            color: $color--white;
+            height: 24px;
+            width: 24px;
+          }
         }
-
-        &__item{
-            text-decoration: none;
-            border-radius: 6px;
-            color: $color--secondary;
-
-            &:not(:last-of-type){
-                margin-right: 20px;
-            }
-
-            svg{
-                margin-right: 8px;
-            }
-
-            &.active{
-                background-color: $color--secondary;
-                color: $color--primary;
-                font-weight: $weight--semibold;
-                padding: 10px 20px;
-            }
-        }
-
+      }
     }
+
+    &__item {
+      text-decoration: none;
+      border-radius: 6px;
+      color: $color--white;
+      transition: background-color 2010ms ease-in-out, color 200ms ease-in-out,
+        font-weight 200ms ease-in-out, padding 200ms ease-in-out;
+
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+
+      &.active {
+        background-color: $color--secondary;
+        color: $color--primary;
+        font-weight: $weight--semibold;
+        padding: 10px 20px;
+      }
+    }
+  }
 }

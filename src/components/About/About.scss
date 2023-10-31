@@ -1,80 +1,106 @@
-@import 'src/assets/scss/settings/global.scss';
-@import 'src/assets/scss/settings/objects/objects.wrapper.scss';
-@import 'src/assets/scss/settings/objects/objects.app.scss';
-@import 'src/assets/scss/settings/helpers/mixins.scss';
-@import 'src/assets/scss/settings/helpers/text.scss';
-@import 'src/assets/scss/settings/helpers/animations.scss';
+@import "src/assets/scss/settings/global.scss";
+@import "src/assets/scss/settings/objects/objects.wrapper.scss";
+@import "src/assets/scss/settings/objects/objects.app.scss";
+@import "src/assets/scss/settings/helpers/mixins.scss";
+@import "src/assets/scss/settings/helpers/text.scss";
+@import "src/assets/scss/settings/helpers/animations.scss";
 
-.c-about{
-    padding-top: 100px;
-    padding-bottom: 100px;
-    
-    @media(max-width: $breakpoint-wide){
-        padding-top: 80px;
-        padding-bottom: 60px;
+.c-about {
+  padding-top: 80px !important;
+  padding-bottom: 8px !important;
+  min-height: calc(100vh - 92px);
+
+  @media (max-width: $breakpoint-desktop) {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $color--primary;
+    display: block;
+    z-index: -1;
+  }
+
+  &__content {
+    display: grid;
+    align-items: start;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 60px;
     }
 
-    &::before{
-        content: '';
+    &__title {
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-weight: $weight--semibold;
+      background-color: $color--secondary;
+      padding: 30px 75px 30px 0;
+      border-radius: 0 16px 16px 0;
+      position: relative;
+      font-size: 42px;
+      animation: 0.6s ease-in-out 0s 1 slideInFromLeft;
+
+      @media (max-width: $breakpoint-tablet) {
+        padding-right: 0;
+      }
+
+      @media (min-width: $breakpoint-wide) {
+        white-space: nowrap;
+        width: min-content;
+      }
+
+      &::before {
+        content: "";
         height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
+        width: 100vw;
+        left: -90vw;
         top: 0;
-        background-color: $color--primary;
-        display: block;
         z-index: -1;
+        display: flex;
+        background-color: $color--secondary;
+        position: absolute;
+      }
+
+      span {
+        color: $color--primary;
+      }
     }
 
-    &__content{
-        display: grid;
-        grid-template-columns: repeat(2,minmax(0,1fr));
-        align-items: start;
-        &__title{
-            margin-top: 0;
-            margin-bottom: 30px;
-            font-weight: $weight--semibold;
-            background-color: $color--secondary;
-            padding: 30px 75px 30px 0;
-            border-radius: 0 16px 16px 0;
-            width: min-content;
-            white-space: nowrap;
-            position: relative;
-            font-size: 42px;
-
-            &::before{
-                content: '';
-                height: 100%;
-                width: 100vw;
-                left: -90vw;
-                top: 0;
-                z-index: -1;
-                display: flex;
-                background-color: $color--secondary;
-                position: absolute;
-            }
-
-            span{
-                color: $color--primary;
-            }
+    &__text {
+      transform: translateY(100%);
+      opacity: 0;
+      animation: 0.6s ease-in-out 0.5s 1 slideInFromBottom forwards;
+      &__inner {
+        font-weight: $weight--semibold;
+        &:not(:last-of-type) {
+          margin-top: 0;
         }
-
-        &__text{
-            &__inner{
-                font-weight: $weight--semibold;
-                &:not(:last-of-type){
-                    margin-top: 0;
-                }
-            }
-        }
+      }
     }
+  }
 
-    &__highlights{
-        &__title{
-            font-size: 32px;
-            font-weight: $weight--semibold;
-            margin-top: 50px;
-            margin-bottom: 46px;
-        }
+  &__highlights {
+    opacity: 0;
+    filter: blur(5px);
+    animation: 0.6s ease-in-out 0.8s 1 blurIntoFocus forwards;
+
+    &__title {
+      font-size: 32px;
+      font-weight: $weight--semibold;
+      margin-top: 50px;
+      margin-bottom: 46px;
     }
+  }
 }

@@ -1,48 +1,50 @@
-@import 'src/assets/scss/settings/global.scss';
-@import 'src/assets/scss/settings/helpers/animations.scss';
+@import "src/assets/scss/settings/global.scss";
+@import "src/assets/scss/settings/helpers/animations.scss";
 
-.c-mobile-menu{
+.c-mobile-menu {
   @media (min-width: $breakpoint-tablet) {
     display: none;
   }
 
-  &.open{
-    .c-mobile-menu__toggle__bar{
-      &:nth-child(1){
+  &.open {
+    .c-mobile-menu__toggle__bar {
+      &:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 5px);
       }
 
-      &:nth-child(2){
+      &:nth-child(2) {
         opacity: 0;
       }
 
-      &:nth-child(3){
+      &:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -5px);
       }
     }
 
-    .c-mobile-menu__content{
+    .c-mobile-menu__content {
       opacity: 1;
       pointer-events: all;
     }
   }
 
-  &__toggle{
+  &__toggle {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: min-content;
+    overflow: visible;
 
-      &__bar{
-        height: 4px;
-        width: 30px;
-        background-color: #333;
-        transition: 0.4s;
-      }
+    &__bar {
+      height: 3px;
+      width: 30px;
+      background-color: #333;
+      border-radius: 3px;
+      transition: 0.4s;
     }
+  }
 
-  &__content{
+  &__content {
     position: fixed;
     top: 80px;
     left: 0;
@@ -58,7 +60,7 @@
     align-items: center;
     transition: opacity 200ms ease-in-out;
 
-    &__item{
+    &__item {
       color: $color--white;
       text-decoration: none;
       font-family: $font--title;
@@ -66,7 +68,7 @@
       font-size: 28px;
       margin-top: 20px;
 
-      &:first-of-type{
+      &:first-of-type {
         margin-top: 40px;
       }
     }

@@ -1,12 +1,13 @@
-import logo from './logo.svg';
-import './App.scss';
-import { Routes, Route, useLocation, useHistory } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import About from './components/About/About';
-import Projects from './components/Projects/Projects';
+import { Route, Routes, useHistory, useLocation } from "react-router-dom";
+import "./App.scss";
+import About from "./components/About/About";
+import Home from "./components/Home";
+import Layout from "./components/Layout";
+import Projects from "./components/Projects/Projects";
+import logo from "./logo.svg";
 
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from "framer-motion";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const location = useLocation();
@@ -14,10 +15,11 @@ function App() {
     <>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path='/' element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path='about' element={<About />} />
-            <Route path='projects' element={<Projects />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
       </AnimatePresence>
