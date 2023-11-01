@@ -71,8 +71,8 @@ const Contact = () => {
               Please select...
             </option>
             <option value="General Inquiry">General Inquiry</option>
-            <option value="Product Support">Product Support</option>
-            <option value="Feedback">Feedback</option>
+            <option value="Front End Development">Front End Development</option>
+            <option value="UX UI Design">UX UI Design</option>
             <option value="Other">Other</option>
           </select>
         </div>

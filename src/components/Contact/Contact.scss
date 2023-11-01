@@ -1,4 +1,5 @@
 @import "src/assets/scss/settings/global.scss";
+@import "src/assets/scss/settings/helpers/animations.scss";
 
 .c-contact {
   min-height: calc(100vh - 92px);
@@ -7,11 +8,22 @@
 
   &__title {
     margin-top: 0;
+    font-weight: $weight--semibold;
+    opacity: 0;
+    filter: blur(5px);
+    animation: 0.4s ease-in-out 0.3s 1 blurIntoFocus forwards;
+
+    @media (min-width: $breakpoint-tablet) {
+      max-width: 720px;
+    }
   }
   &__form {
     display: grid;
     column-gap: 26px;
     row-gap: 26px;
+    opacity: 0;
+    filter: blur(5px);
+    animation: 0.4s ease-in-out 0.5s 1 blurIntoFocus forwards;
 
     @media (min-width: $breakpoint-tablet) {
       grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -15,6 +15,7 @@ import MusicImg from "../../assets/images/musicethly.png";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import { SliderSlide } from "../SliderSlide/SliderSlide";
 import "./TabPages.scss";
 
 export const TabPages = () => {
@@ -33,21 +34,21 @@ export const TabPages = () => {
         {
           image: JlaImg,
           title: "Journey Latin America",
-          text: "A more ethical alternative to Spotify, Musicethly aims to provide users with a top notch music streaming experience, with the added ability to tip artists that boosts their earnings. ",
+          text: "Based on WordPress and using elements of React for aspects of the site's functionality, Journey Latin America saw me recreate XD designs quickly and to a pixel perfect standard. I also developed an SVG map which toggled it's state based on which area of the map was clicked.",
           codeLink: "https://www.journeylatinamerica.com/",
           label: "Professional",
         },
         {
           image: FormImg,
           title: "Form LMS",
-          text: "Lorem Ipsum",
+          text: "Based on Vue, Form LMS aims to provide a customisable and sleek learning experience for admins and learners. I participated in the entire development lifecycle of new features, from providing feedback to the UX team to collaborating with the other Front End Developer to decide on solutions and carry out code reviews.",
           codeLink: "https://www.journeylatinamerica.com/",
           label: "Professional",
         },
         {
           image: CanvasImg,
           title: "Canvas itinerary generator",
-          text: "Canvas Travel gives Tour Operators and other travel companies a travel itinerary generator platform to create and distribute personalised itineraries from the moment of enquiry to help convert bookings, retain customers involved in the planning process, through to delivering a fabulous user experience for the traveller when on your trip.",
+          text: "Built with React, Canvas Travel gives Tour Operators and other travel companies a travel itinerary generator platform to create and distribute personalised itineraries from the moment of enquiry to help convert bookings, retain customers involved in the planning process, through to delivering a fabulous user experience for the traveller when on your trip.",
           codeLink: "https://www.journeylatinamerica.com/",
           label: "Professional",
         },
@@ -129,47 +130,19 @@ export const TabPages = () => {
     }
 
     return tabsRef.current[activeTab].slides.map((slide, index) => (
-      <SwiperSlide key={index} className="c-tabs__content__inner__slide">
-        <div className="c-tabs__content__inner__slide__image">
-          <img src={slide.image} />
-          {slide.label && (
-            <p className="c-tabs__content__inner__slide__image__label">
-              {slide.label}
-            </p>
-          )}
-          <div className="c-tabs__content__inner__slide__image__links">
-            {slide.codeLink && (
-              <a href={slide.codeLink}>
-                <img src={codeIcon} />
-              </a>
-            )}
-            {slide.githubLink && (
-              <a href={slide.githubLink}>
-                <img src={githubIcon} />
-              </a>
-            )}
-          </div>
-        </div>
-        <div
-          className={`c-tabs__content__inner__slide__content ${
-            expandedStates[index]
-              ? "c-tabs__content__inner__slide__content--expanded"
-              : ""
-          }`}
-        >
-          <h3 className="c-tabs__content__inner__slide__content__title">
-            {slide.title}
-          </h3>
-          <p className="c-tabs__content__inner__slide__content__text">
-            {slide.text}
-            <p
-              className="c-tabs__content__inner__slide__content__text__toggle"
-              onClick={() => toggleExpand(index)}
-            >
-              {expandedStates[index] ? "Read less" : "Read More"}
-            </p>
-          </p>
-        </div>
+      <SwiperSlide key={index}>
+        <SliderSlide
+          image={slide.image}
+          label={slide.label}
+          codeLink={slide.codeLink}
+          codeIcon={codeIcon}
+          githubLink={slide.githubLink}
+          githubIcon={githubIcon}
+          title={slide.title}
+          text={slide.text}
+          expanded={expandedStates[index]}
+          onClick={() => toggleExpand(index)}
+        />
       </SwiperSlide>
     ));
   };
@@ -191,11 +164,13 @@ export const TabPages = () => {
         <Swiper
           slidesPerView={1}
           spaceBetween={14}
+          pagination={{
+            clickable: true,
+          }}
           autoplay={{
             delay: 5000,
             pauseOnMouseEnter: true,
           }}
-          pagination={true}
           modules={[Autoplay, Pagination]}
           breakpoints={{
             640: {
