@@ -148,6 +148,7 @@
               justify-content: center;
               align-items: center;
               transition: transform 200ms ease-in-out;
+              margin: 0 10px;
 
               &:hover {
                 transform: scale(1.05);
@@ -157,10 +158,6 @@
                 height: calc(100% - 20px);
                 width: calc(100% - 20px);
                 position: relative;
-              }
-
-              &:first-of-type {
-                margin-right: 30px;
               }
             }
           }
@@ -176,6 +173,14 @@
             margin: 0;
             font-size: 18px;
             font-family: $font--text;
+          }
+
+          &__text {
+            &__toggle {
+              color: $color--primary;
+              font-weight: $weight--semibold;
+              cursor: pointer;
+            }
           }
         }
       }

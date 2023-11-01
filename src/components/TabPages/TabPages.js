@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { register } from "swiper/element/bundle";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -8,6 +7,7 @@ import CanvasImg from "../../assets/images/canvas.png";
 import codeIcon from "../../assets/images/code.svg";
 import DtwImg from "../../assets/images/dtw.png";
 import githubIcon from "../../assets/images/github.svg";
+import GuykatImg from "../../assets/images/guykat.png";
 import JlaImg from "../../assets/images/jla.png";
 import FormImg from "../../assets/images/melearning.png";
 import MusicImg from "../../assets/images/musicethly.png";
@@ -18,8 +18,6 @@ import "swiper/css/pagination";
 import "./TabPages.scss";
 
 export const TabPages = () => {
-  register();
-
   const tabsRef = useRef([
     {
       title: "Web Development",
@@ -57,12 +55,15 @@ export const TabPages = () => {
           image: DtwImg,
           title: "Discover the world education",
           text: "Canvas Travel gives Tour Operators and other travel companies a travel itinerary generator platform to create and distribute personalised itineraries from the moment of enquiry to help convert bookings, retain customers involved in the planning process, through to delivering a fabulous user experience for the traveller when on your trip.",
-          codeLink: "https://www.journeylatinamerica.com/",
+          codeLink: "https://www.discover-the-world.com/",
           label: "Professional",
         },
         {
-          title: "Example",
-          text: "Lorem Ipsum",
+          image: GuykatImg,
+          title: "GuyKat",
+          text: "I built the company website using the WordPress CMS whilst also working on multiple client projects. The GuyKat website showcases some of the big names and brands that I worked with such as Loreal and Amnesty International.",
+          codeLink: "https://www.guykat.com/",
+          label: "Professional",
         },
       ],
     },
@@ -75,6 +76,7 @@ export const TabPages = () => {
       slides: [],
     },
   ]);
+
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
@@ -148,16 +150,38 @@ export const TabPages = () => {
             )}
           </div>
         </div>
-        <div className="c-tabs__content__inner__slide__content">
+        <div
+          className={`c-tabs__content__inner__slide__content ${
+            expandedStates[index]
+              ? "c-tabs__content__inner__slide__content--expanded"
+              : ""
+          }`}
+        >
           <h3 className="c-tabs__content__inner__slide__content__title">
             {slide.title}
           </h3>
           <p className="c-tabs__content__inner__slide__content__text">
             {slide.text}
+            <p
+              className="c-tabs__content__inner__slide__content__text__toggle"
+              onClick={() => toggleExpand(index)}
+            >
+              {expandedStates[index] ? "Read less" : "Read More"}
+            </p>
           </p>
         </div>
       </SwiperSlide>
     ));
+  };
+
+  const [expandedStates, setExpandedStates] = useState(
+    tabsRef.current[activeTab].slides.map(() => false)
+  );
+
+  const toggleExpand = (index) => {
+    setExpandedStates((prev) =>
+      prev.map((state, i) => (i === index ? !state : state))
+    );
   };
 
   return (
