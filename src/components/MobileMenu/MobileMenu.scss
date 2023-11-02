@@ -7,20 +7,6 @@
   }
 
   &.open {
-    .c-mobile-menu__toggle__bar {
-      &:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 5px);
-      }
-
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -5px);
-      }
-    }
-
     .c-mobile-menu__content {
       opacity: 1;
       pointer-events: all;
@@ -38,7 +24,7 @@
     &__bar {
       height: 3px;
       width: 30px;
-      background-color: #333;
+      background-color: $color--white;
       border-radius: 3px;
       transition: 0.4s;
     }

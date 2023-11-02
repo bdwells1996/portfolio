@@ -27,16 +27,17 @@ function About() {
         </h1>
         <div className="c-about__content__text">
           <p className="c-about__content__text__inner">
-            Highly motivated Front-end developer working in the eLearning
-            industry. My career thus far has developed my skills working with
-            HTML, CSS, Javascript, React/Vue.JS and Figma/the Adobe suite.
+            As a highly motivated Front-end developer in the eLearning industry,
+            my career journey has honed my proficiency in HTML, CSS, Javascript,
+            as well as React/Vue.JS, and design tools like Figma and the Adobe
+            suite.
           </p>
           <p className="c-about__content__text__inner">
-            In addition to this I have also developed excellent
-            communication/consultancy skills that have allowed me to go above
-            and beyond, fostering long term partnerships with clients whilst
-            delivering an end-to-end development pipeline from consultation to
-            delivery.
+            Moreover, I've cultivated strong communication and consultancy
+            skills, enabling me to not only meet but exceed client expectations.
+            This has led to the establishment of enduring partnerships, and I
+            take pride in overseeing projects from initial consultation through
+            to seamless delivery.
           </p>
         </div>
       </div>

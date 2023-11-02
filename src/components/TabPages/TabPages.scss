@@ -84,6 +84,8 @@
     &__image {
       @include aspect-ratio(630, 420);
       width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
 
       img {
         position: absolute;
@@ -127,6 +129,10 @@
           padding: 12px 42px;
           border-radius: 6px;
           text-decoration: none;
+
+          &--disabled {
+            display: none;
+          }
 
           &:first-of-type {
             margin-right: 20px;

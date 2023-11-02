@@ -111,6 +111,7 @@
   &__arrow {
     position: absolute;
     bottom: 0;
+    z-index: 20;
     height: 40px;
     width: 60px;
     background-color: $color--primary;

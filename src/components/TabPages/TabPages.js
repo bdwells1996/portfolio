@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import SampleImg from "../../assets/images/Rectangle 31.jpg";
 import CanvasImg from "../../assets/images/canvas.png";
+import CanvasHighlight from "../../assets/images/canvashighlight.jpg";
 import codeIcon from "../../assets/images/code.svg";
 import DtwImg from "../../assets/images/dtw.png";
 import githubIcon from "../../assets/images/github.svg";
@@ -189,34 +189,39 @@ export const TabPages = () => {
         </Swiper>
         <div className="c-tabs__highlight">
           <div className="c-tabs__highlight__image">
-            <img src={SampleImg} />
+            <img src={CanvasHighlight} />
           </div>
           <div className="c-tabs__highlight__content">
             <h2 className="c-tabs__highlight__content__title">
-              Spotlight on: Musicethly
+              Spotlight on: Canvas Travel
             </h2>
             <p className="c-tabs__highlight__content__tagline">
-              The ethical music streaming platform
+              A unique innovation for the travel and events industries
             </p>
             <p className="c-tabs__highlight__content__text">
-              Lorem ipsum dolor sit amet consectetur. Ultricies nisl massa purus
-              mattis. Neque ipsum vitae id morbi lacinia accumsan fames. Sed ac
-              facilisis lorem praesent etiam nec adipiscing id massa. Diam at id
-              cras eu non elit nisl. Ut mi quisque scelerisque morbi sagittis
-              risus purus eu nunc.
+              Canvas itineraries and event agendas are personalised microsites
+              that are easily accessible, work across all devices, but behave
+              like apps on mobile. Canvas gets your agendas and itineraries into
+              customers’ hands quicker, giving them a better experience,
+              improving conversion and removing the need for third-party apps or
+              emailing documents.
             </p>
             <p className="c-tabs__highlight__content__text">
-              Lorem ipsum dolor sit amet consectetur. Ultricies nisl massa purus
-              mattis. Neque ipsum vitae id morbi lacinia accumsan fames. Sed ac
-              facilisis lorem praesent etiam nec adipiscing id massa. Diam at id
-              cras eu non elit nisl. Ut mi quisque scelerisque morbi sagittis
-              risus purus eu nunc.
+              Built with React and interacting with a Laravel backend, Canvas
+              Travel aims to provide bespoke itinerary and agendas for holidays.
+              The admin dashboard stored a variety of data from user
+              information, workspaces and events, I assisted on building out
+              features and improved existing functionality. Although there isn't
+              a live demo I'm proud of the work I carried out here.
             </p>
             <div className="c-tabs__highlight__content__buttons">
               <a href="/" className="c-tabs__highlight__content__buttons__item">
-                View project
+                Find out more
               </a>
-              <a href="/" className="c-tabs__highlight__content__buttons__item">
+              <a
+                href="/"
+                className="c-tabs__highlight__content__buttons__item c-tabs__highlight__content__buttons__item--disabled"
+              >
                 View on github
               </a>
             </div>
