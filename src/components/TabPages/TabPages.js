@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -23,14 +24,14 @@ export const TabPages = () => {
     {
       title: "Web Development",
       slides: [
-        {
-          image: MusicImg,
-          title: "Musicethly",
-          text: "A more ethical alternative to Spotify, Musicethly aims to provide users with a top notch music streaming experience, with the added ability to tip artists that boosts their earnings.",
-          codeLink: "https://www.journeylatinamerica.com/",
-          githubLink: "https://github.com/musicethly",
-          label: "Personal",
-        },
+        // {
+        //   image: MusicImg,
+        //   title: "Musicethly",
+        //   text: "A more ethical alternative to Spotify, Musicethly aims to provide users with a top notch music streaming experience, with the added ability to tip artists that boosts their earnings.",
+        //   codeLink: "https://www.journeylatinamerica.com/",
+        //   githubLink: "https://github.com/musicethly",
+        //   label: "Personal",
+        // },
         {
           image: JlaImg,
           title: "Journey Latin America",
@@ -42,14 +43,14 @@ export const TabPages = () => {
           image: FormImg,
           title: "Form LMS",
           text: "Based on Vue, Form LMS aims to provide a customisable and sleek learning experience for admins and learners. I participated in the entire development lifecycle of new features, from providing feedback to the UX team to collaborating with the other Front End Developer to decide on solutions and carry out code reviews.",
-          codeLink: "https://www.journeylatinamerica.com/",
+          codeLink: "https://www.melearning.co.uk/what/learning-platform/",
           label: "Professional",
         },
         {
           image: CanvasImg,
           title: "Canvas itinerary generator",
           text: "Built with React, Canvas Travel gives Tour Operators and other travel companies a travel itinerary generator platform to create and distribute personalised itineraries from the moment of enquiry to help convert bookings, retain customers involved in the planning process, through to delivering a fabulous user experience for the traveller when on your trip.",
-          codeLink: "https://www.journeylatinamerica.com/",
+          codeLink: "https://wilddogcanvas.com/what-is-canvas/",
           label: "Professional",
         },
         {
@@ -113,17 +114,17 @@ export const TabPages = () => {
           </p>
           <div className="c-tabs__content__inner__empty__links">
             <a
-              href="/"
+              href="https://github.com/bdwells1996"
               className="c-tabs__content__inner__empty__links__button"
             >
               Find more on my Github
             </a>
-            <a
-              href="/"
+            <Link
+              to="/contact"
               className="c-tabs__content__inner__empty__links__button"
             >
               Get in touch!
-            </a>
+            </Link>
           </div>
         </div>
       );
@@ -215,7 +216,10 @@ export const TabPages = () => {
               a live demo I'm proud of the work I carried out here.
             </p>
             <div className="c-tabs__highlight__content__buttons">
-              <a href="/" className="c-tabs__highlight__content__buttons__item">
+              <a
+                href="https://wilddogcanvas.com/what-is-canvas/"
+                className="c-tabs__highlight__content__buttons__item"
+              >
                 Find out more
               </a>
               <a
