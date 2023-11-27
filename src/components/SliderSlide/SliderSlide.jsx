@@ -9,6 +9,8 @@ export const SliderSlide = ({
   githubLink,
   codeIcon,
   githubIcon,
+  designLink,
+  designIcon,
   onClick,
   expanded,
 }) => {
@@ -28,6 +30,11 @@ export const SliderSlide = ({
           {githubLink && (
             <a href={githubLink}>
               <img src={githubIcon} />
+            </a>
+          )}
+          {designLink && (
+            <a href={designLink}>
+              <img src={designIcon} />
             </a>
           )}
         </div>

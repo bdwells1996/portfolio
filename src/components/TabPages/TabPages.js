@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import VeGoodImg from "../../assets/images/Vegood.jpg";
 import CanvasImg from "../../assets/images/canvas.png";
 import CanvasHighlight from "../../assets/images/canvashighlight.jpg";
 import codeIcon from "../../assets/images/code.svg";
+import designIcon from "../../assets/images/design.svg";
 import DtwImg from "../../assets/images/dtw.png";
 import githubIcon from "../../assets/images/github.svg";
 import GuykatImg from "../../assets/images/guykat.png";
 import JlaImg from "../../assets/images/jla.png";
 import FormImg from "../../assets/images/melearning.png";
 import MusicImg from "../../assets/images/musicethly.png";
+import PrestoImg from "../../assets/images/presto.jpg";
 
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -71,11 +74,55 @@ export const TabPages = () => {
     },
     {
       title: "UX UI",
-      slides: [],
+      slides: [
+        {
+          image: VeGoodImg,
+          title: "VeGood - Vegan meal plans and recipe sharing",
+          text: "Leaning on all my experience of the full development and UX lifecycle, I designed an app that allows users to create and manage meal plans for the week, as well as create and upload recipes.",
+          designLink: "https://www.melearning.co.uk/what/learning-platform/",
+          label: "Personal",
+        },
+        {
+          image: MusicImg,
+          title: "Musicethly",
+          text: "The goal was to design a more ethical place for music artists to upload their work, providing protection from automated copyright strikes that are unfair and sifle creativity.",
+          designLink: "https://www.melearning.co.uk/what/learning-platform/",
+          label: "Personal",
+        },
+        {
+          image: FormImg,
+          title: "Form LMS",
+          text: "I utilised my existing knowledge of user and admin requirements of an LMS to advise on new features and tweak existing ones. Working directly with the UX Designer provided valuable insights into the whole UX lifecycle.",
+          designLink: "https://www.melearning.co.uk/what/learning-platform/",
+          label: "Professional",
+        },
+      ],
     },
     {
       title: "Design",
-      slides: [],
+      slides: [
+        {
+          image: MusicImg,
+          title: "Musicethly",
+          text: "The goal was to design a more ethical place for music artists to upload their work, providing protection from automated copyright strikes that are unfair and sifle creativity.",
+          designLink: "https://www.melearning.co.uk/what/learning-platform/",
+          label: "Personal",
+        },
+        {
+          image: VeGoodImg,
+          title: "VeGood - Vegan meal plans and recipe sharing",
+          text: "Leaning on all my experience of the full development and UX lifecycle, I designed an app that allows users to create and manage meal plans for the week, as well as create and upload recipes.",
+          designLink: "https://www.melearning.co.uk/what/learning-platform/",
+          label: "Personal",
+        },
+        {
+          image: PrestoImg,
+          title: "Presto Pathways",
+          text: "A full design concept for a travel company, I created both desktop and mobile designs based on a design system that I created.",
+          designLink: "https://www.melearning.co.uk/what/learning-platform/",
+          label: "Personal",
+        },
+      ],
     },
   ]);
 
@@ -139,6 +186,8 @@ export const TabPages = () => {
           codeIcon={codeIcon}
           githubLink={slide.githubLink}
           githubIcon={githubIcon}
+          designLink={slide.designLink}
+          designIcon={designIcon}
           title={slide.title}
           text={slide.text}
           expanded={expandedStates[index]}
